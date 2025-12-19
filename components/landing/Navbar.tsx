@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button className="px-4 py-2 text-slate-300 hover:text-white transition text-sm hidden sm:block">Sign In</button>
+          <Link href="/signin" className="px-4 py-2 text-slate-300 hover:text-white transition text-sm hidden sm:block">Sign In</Link>
           <Link 
             href="/signup"
             className="p-3 sm:p-4 bg-white hover:bg-slate-100 text-slate-900 rounded-md transition text-xs md:text-sm font-medium"
