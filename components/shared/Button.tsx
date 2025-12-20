@@ -15,7 +15,7 @@ const Button = ({ children, variant = 'primary', size = 'md', href, onClick, cla
   const baseClasses = 'font-medium transition rounded-lg shadow-sm';
   
   const variants = {
-    primary: 'bg-green-600 hover:bg-blue-700 text-white',
+    primary: 'bg-green-600 hover:bg-green-800 text-white',
     secondary: 'bg-slate-800 hover:bg-slate-700 text-white',
     ghost: 'text-slate-300 hover:text-white'
   };

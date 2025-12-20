@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BsCheck } from 'react-icons/bs';
+import Button from '../shared/Button';
 
 interface PricingCardProps {
   name: string;
@@ -37,9 +38,9 @@ const plans = [
 
 const PricingSection = () => {
   const PricingCard = ({ name, description, price, buttonText, features, isPopular }: PricingCardProps) => (
-    <div className={`${isPopular ? 'bg-linear-to-b from-blue-500/10 to-purple-500/10 border-2 border-blue-500/50' : 'bg-slate-900 border border-slate-800'} rounded-2xl p-8 relative`}>
+    <div className={`${isPopular ? 'bg-linear-to-b from-blue-500/10 to-purple-500/10 border-2 border-green-500/50' : 'bg-slate-900 border border-slate-800'} rounded-2xl p-8 relative`}>
       {isPopular && (
-        <div className="absolute top-4 right-4 px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
+        <div className="absolute top-4 right-4 px-3 py-1 bg-purple-500 text-white text-xs font-bold rounded-full">
           POPULAR
         </div>
       )}
@@ -50,13 +51,13 @@ const PricingSection = () => {
         <span className="text-slate-400">/month</span>
       </div>
       {buttonText === 'Get Started' ? (
-        <Link href="/signup" className={`w-full px-6 py-3 ${isPopular ? 'bg-blue-600 hover:bg-blue-700' : 'bg-slate-800 hover:bg-slate-700'} text-white rounded-lg font-medium transition mb-8 block text-center`}>
+        <Button href="/signup" className={`w-full px-6 py-3 ${!isPopular && 'bg-slate-800 hover:bg-slate-700'} text-white rounded-lg font-medium transition mb-8 block text-center`}>
           {buttonText}
-        </Link>
+        </Button>
       ) : (
-        <button type='button' className={`w-full px-6 py-3 ${isPopular ? 'bg-blue-600 hover:bg-blue-700' : 'bg-slate-800 hover:bg-slate-700'} text-white rounded-lg font-medium transition mb-8`}>
+        <Button href="/signin" className={`w-full px-6 py-3 ${!isPopular && 'bg-slate-800 hover:bg-slate-700'} text-white rounded-lg font-medium transition mb-8 block text-center`}>
           {buttonText}
-        </button>
+        </Button>
       )}
       <ul className="space-y-3">
         {features.map((feature, index) => (
